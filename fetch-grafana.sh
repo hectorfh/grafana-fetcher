@@ -31,9 +31,15 @@ if [ -z "$GRAFANA_SESSION" ] || [ -z "$APP_NAME" ] || [ -z "$START_STR" ] || [ -
   exit 1
 fi
 
+echo "Parameters:"
+echo "  app_name : $APP_NAME"
+echo "  start    : $START_STR"
+echo "  end      : $END_STR"
+echo ""
+
 GRAFANA_URL="https://grafana.botco.ai"
 DATASOURCE_UID="aeyder96xwflsa"
-LIMIT=1100
+LIMIT=5000
 
 # Rotate token only if current session is expired or invalid
 echo "Checking grafana_session token..." >&2
